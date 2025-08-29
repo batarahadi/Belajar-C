@@ -10,7 +10,10 @@ int main() {
         exit(-1);
     }
 
-    fprintf(dataMenulis, "masukin apa ya\n");
+    char dataMasuk[100];
+    printf("Masukkan data yang akan ditulis ke file: ");
+    scanf("%[^\n]", dataMasuk);
+    fprintf(dataMenulis, "%s\n", dataMasuk);
 
     return 0;
 }
