@@ -10,9 +10,7 @@ int main() {
         exit(-1);
     }
 
-    fprintf(dataKeluar, "Ini adalah contoh teks yang ditulis ke dalam file.txt\n");
-
-    fscanf(dataMasuk, "%*c");
+    fprintf(dataKeluar, "masukin apa ya\n");
 
     return 0;
 }
