@@ -31,7 +31,7 @@ int main() {
     while (fgets(dataInputan, sizeof(dataInputan), dataMembaca) != NULL) {
         printf("%s", dataInputan);
     }
-
+    
     fclose(dataMembaca);
 
     return 0;
