@@ -21,10 +21,10 @@ int main() {
         exit(-1);
     }
 
-    char dataKeluar[100];
+    char dataInputan[100];
     printf("Data yang ada dalam file.txt:\n");
-    while (fgets(dataKeluar, sizeof(dataKeluar), dataMembaca) != NULL){
-        printf("%s", dataKeluar);
+    while (fgets(dataInputan, sizeof(dataInputan), dataMembaca) != NULL){
+        printf("%s", dataInputan);
     }
 
     fclose(dataMembaca);
