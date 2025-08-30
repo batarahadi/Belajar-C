@@ -23,8 +23,8 @@ int main() {
 
     char dataInputan[100];
     printf("Data yang ada dalam file.txt:\n");
-    while (fgets(dataInputan, sizeof(dataInputan), dataMembaca) != NULL){
-        printf("%s", dataInputan);
+    while (fgets(dataInputan, sizeof(dataInputan), dataMembaca) != NULL) {
+       printf("%s", dataInputan);
     }
 
     fclose(dataMembaca);
