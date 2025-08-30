@@ -8,10 +8,13 @@ int main() {
         exit(-1);
     }
 
-    char dataMasuk[100];
     printf("Masukkan data yang akan ditulis ke file max 100 karakter: \n");
-    scanf("%[^\n]", dataMasuk);
-    fprintf(dataMenulis, "%s\n", dataMasuk);
+    char dataMasuk[100];
+    // scanf("%[^\n]", dataMasuk); // cara pertama
+    // fprintf(dataMenulis, "%s\n", dataMasuk);
+    
+    fgets(dataMasuk, sizeof(dataMasuk), stdin); // cara kedua
+    fputs(dataMasuk, dataMenulis);
 
     fclose(dataMenulis);
 
