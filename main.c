@@ -22,11 +22,11 @@ int main() {
     }
 
     char dataKeluar[100];
-    printf("Isi file.tx adalah:\n");
-    while (fgets(dataKeluar, sizeof(dataKeluar), dataMembaca) != NULL) {
+    printf("Data yang ada dalam file.txt:\n");
+    while (fgets(dataKeluar, sizeof(dataKeluar), dataMembaca) != NULL){
         printf("%s", dataKeluar);
     }
-    
+
     fclose(dataMembaca);
 
     return 0;
