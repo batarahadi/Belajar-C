@@ -10,6 +10,7 @@ int main() {
 
     printf("Masukkan data yang akan ditulis ke file max 100 karakter: \n");
     char dataMasuk[100];
+    
     /* Cara Pertama Untuk menulih karakter kedalam file.txt */
     // scanf("%[^\n]", dataMasuk); 
     // fprintf(dataMenulis, "%s\n", dataMasuk);
