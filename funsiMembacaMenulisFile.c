@@ -8,8 +8,8 @@ int main() {
         exit(-1);
     }
 
-    printf("Masukkan data yang akan ditulis ke file max 100 karakter: \n");
     char dataMasuk[100];
+    printf("Masukkan data yang akan ditulis ke file max 100 karakter: \n");
     
     /* Cara Pertama Untuk menulis karakter kedalam file.txt */
     // scanf("%[^\n]", dataMasuk); 
