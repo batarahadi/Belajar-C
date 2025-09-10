@@ -1,10 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    
-    int b = -0;
-    printf("%u\n", b);
+    int a, b;
+    float result;
 
+    printf("Enter two integers: ");
+    scanf("%d %d", &a, &b); // Kesalahan di sini: karena format specifier hanya satu
+
+    result = (float)a / (float)b; // Potensi kesalahan lain: jika ingin menghasilkan koma, integer harus diubah ke float 
+    printf("The division of %d and %d is %f\n", a, b, result);
 
     return 0;
 }
