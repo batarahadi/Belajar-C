@@ -8,7 +8,7 @@ int main() {
     scanf("%d %d", &a, &b); // Kesalahan di sini: karena format specifier hanya satu
 
     result = (float)a / (float)b; // Potensi kesalahan lain: jika ingin menghasilkan koma, integer harus diubah ke float 
-    printf("The division of %d and %d is %f\n", a, b, result);
+    printf("The division of %d and %d is %.2f\n", a, b, result);
 
     return 0;
 }
