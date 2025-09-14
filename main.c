@@ -1,14 +1,17 @@
 #include <stdio.h>
-
-int main() {
-    int a, b;
-    float result;
-
-    printf("Enter two integers: ");
-    scanf("%d %d", &a, &b); // Kesalahan di sini: karena format specifier hanya satu
-
-    result = (float)a / (float)b; // Potensi kesalahan lain: jika ingin menghasilkan koma, integer harus diubah ke float 
-    printf("The division of %d and %d is %.2f\n", a, b, result);
-
-    return 0;
+#include <math.h>
+int main()
+{
+        float a,b,c,d,x1,x2;
+        printf("Input coef. a : "); scanf("%f",&a);
+        printf("Input coef. b : "); scanf("%f",&b);
+        printf("Input coef. c : "); scanf("%f",&c);
+        d = b*b - 4 * a * c;
+        if (d >= 0){
+	        x1 = (-b + sqrt(d)) / (2 * a);
+   		    x2 = (-b - sqrt(d)) / (2 * a);
+   		    printf("x1=%f\n  x2=%f\n",x1,x2);
+        }
+        else printf("Persamaan memiliki akar imajiner\n");
+        return 0;
 }
