@@ -1,3 +1,9 @@
+// Belajar Fungsi Switch Case
+// Switch case digunakan untuk mengecek nilai dari sebuah variabel
+// Mirip dengan if else, tapi lebih ringkas
+// Biasanya digunakan untuk mengecek nilai yang pasti, misal char atau int
+
+
 #include <stdio.h>
 
 int main() {
