@@ -1,10 +1,8 @@
 #include<stdio.h>
 int main(){
 
-    char nama[3][10] = {"bud", "and", "cac"};
-    for (int i = 0; i < 3; i++){
-        printf("%s\n", nama[i]);
-    }
-
+    int angka[10] = {1,2,3,4,5,6,7,8,9,10};
+    int (*ptr)[10] = angka;
+    printf("%d\n", *(ptr+1));
     return 0;
 }
