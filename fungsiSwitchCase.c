@@ -11,7 +11,7 @@ int main() {
 
     switch (huruf) { // jika di python pake match case
     case ('a'): // bisa pake tanda kurung atau tidak pakai tanda kurung
-        // break;
+        break;
     case 'b':
         printf("hallo\n");
         break;
