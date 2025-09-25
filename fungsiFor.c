@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-     int c;
+    int c;
 
     printf("Enter a character:\n(enter x to exit)\n");
     for ( c=' '; c != 'x'; ) {

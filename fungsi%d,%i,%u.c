@@ -1,11 +1,9 @@
+#include <stdio.h>
+
 // Belajar format specifier %d, %i, dan %u
 // %d = integer (desimal, basis 10), bisa menampilkan angka positif dan negatif
 // %i = integer (desimal, basis 10), bisa menampilkan angka positif dan negatif
 // %u = unsigned integer (desimal, basis 10), hanya bisa menampilkan angka positif
-
-
-
-#include <stdio.h>
 
 int main() {
     int angkaPositif = 5;
