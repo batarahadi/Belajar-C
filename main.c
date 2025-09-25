@@ -1,9 +1,14 @@
-#include<stdio.h>
-
-int main() {
-    int b[5][3]={1112320,20,30,40,50};
-
-    printf("%d\n", b[3][2]);
-    
-    return 0;
+#include <stdio.h>
+ 
+struct details {int num;};
+ 
+int main() { 
+    struct details MainDetails;
+    struct details *structptr;
+    structptr=&MainDetails;
+    structptr->num=20; 
+    printf("n%d",MainDetails.num);
+ 
+ 
+return 0; 
 }
