@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h> // perlu untuk system()
 
-/* system("cls") = clear screen di Windows.
+/* untuk membersihkan terminal/console secara otomatis
+system("cls") = clear screen di Windows.
 system("clear") = clear screen di Linux/Mac.*/
 
 
