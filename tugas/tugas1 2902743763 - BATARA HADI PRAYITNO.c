@@ -31,9 +31,9 @@ int main() {
 
         printf("penjumlahan = %d\n", pertambahan(dataAngka[0], dataAngka[1], dataAngka[2]));
         printf("pengurangan = %d\n", pengurangan(dataAngka[0], dataAngka[1], dataAngka[2]));
-        printf("perkalian = %d\n", perkalian(dataAngka[0], dataAngka[1], dataAngka[2]));
-        printf("pembagian = %.2f\n", pembagian(dataAngka[0], dataAngka[1], dataAngka[2]));
-        printf("rata-rata = %.2f\n", rataRata(dataAngka[0], dataAngka[1], dataAngka[2]));
+        printf("perkalian   = %d\n", perkalian(dataAngka[0], dataAngka[1], dataAngka[2]));
+        printf("pembagian   = %.2f\n", pembagian(dataAngka[0], dataAngka[1], dataAngka[2]));
+        printf("rata-rata   = %.2f\n", rataRata(dataAngka[0], dataAngka[1], dataAngka[2]));
 
         printf("Apakah ingin melakukan operasi lagi? (Y/n): "); // menanyakan user apakah ingin mengulang atau tidak
         scanf(" %c", &ulang);
