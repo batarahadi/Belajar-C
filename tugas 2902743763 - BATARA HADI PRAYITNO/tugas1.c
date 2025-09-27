@@ -8,7 +8,7 @@ tidak hanya itu saja, menggunakan definisi dapat membuat code menjadi lebih rapi
 int pertambahan(int a, int b, int c) { return a + b + c; }
 int pengurangan(int a, int b, int c) { return a - b - c; }
 int perkalian(int a, int b, int c) { return a * b * c; }
-float pembagian(int a, int b, int c) {
+float pembagian(int a, int b, int c) { //menggunakan float agar hasil pembagian tidak dibulatkan
     if (b == 0 || c == 0) {
         printf("Error: Tidak bisa membagi dengan nol!\n"); // mencegah pembagian dengan nilai nol
         return 0;
@@ -16,7 +16,7 @@ float pembagian(int a, int b, int c) {
         return (float)a / b / c;
     }
 }
-float rataRata(int a, int b, int c) { return (float)(a + b + c) / 3; }
+float rataRata(int a, int b, int c) { return (float)(a + b + c) / 3; } //begitujuga dengan ini
 
 int main() { 
     int dataAngka[SIZE];

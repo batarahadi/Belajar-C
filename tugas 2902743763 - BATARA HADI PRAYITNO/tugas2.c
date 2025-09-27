@@ -4,7 +4,7 @@
 /* Saya selalu menambahkan defini agar lebih mudah dimengerti dan code menjadi bersih dan enak dilihat
 dan menggunakan for loop biar gak nulis satu satu seperti di dalam video LMS di tab Lab minggu ke 5*/
 int nilaiTertinggi(int arrey[], int jumlahloop) {
-    int tertinggi = arrey[0];
+    int tertinggi = arrey[0]; 
     for (int i = 1; i < jumlahloop; i++) {
         if (arrey[i] > tertinggi) {
             tertinggi = arrey[i];
@@ -35,7 +35,7 @@ int main(){
     char ulang;
 
     while(1){
-        int dataNilai[UKURAN]={}; // inisialisasi array dengan nilai kosong agar mudah terkontrol dan tidak menghasilkan nilai acak
+        int dataNilai[UKURAN]={0}; // inisialisasi array dengan nilai kosong agar mudah terkontrol dan tidak menghasilkan nilai acak
         int *pointer = dataNilai;
 
         printf("Masukan 5 nilai Siswa : \n");
