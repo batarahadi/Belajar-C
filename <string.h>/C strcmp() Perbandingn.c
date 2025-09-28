@@ -7,11 +7,11 @@ int main() {
 
   // comparing strings str1 and str2
   result = strcmp(str1, str2);
-  printf("strcmp(str1, str2) = %d\n", result);
+  printf("strcmp(str1, str2) = %d\n", result); // hasilnya 32 karena 'c' > 'C'
 
   // comparing strings str1 and str3
   result = strcmp(str1, str3);
-  printf("strcmp(str1, str3) = %d\n", result);
+  printf("strcmp(str1, str3) = %d\n", result); // hasilnya 0 karena str1 sama dengan str3
 
   return 0;
 }
