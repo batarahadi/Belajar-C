@@ -1,4 +1,4 @@
-// Fung Goto dan Label
+// Fungsi Goto dan Label
 // LABEL tidak harus huruf Besar tetapi harus diakhiri dengan titik dua (:)
 // Goto digunakan untuk lompat ke LABEL tertentu
 
