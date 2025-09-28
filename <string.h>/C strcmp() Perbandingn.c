@@ -6,7 +6,7 @@ int main() {
   int result;
 
   // comparing strings str1 and str2
-  result = strcmp(str1, str2);
+  result = strcmp(str1, str2); // ==> strcmp() singkat dari string compare
   printf("strcmp(str1, str2) = %d\n", result); // hasilnya 32 karena 'c' > 'C'
 
   // comparing strings str1 and str3

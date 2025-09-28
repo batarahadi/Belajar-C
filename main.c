@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 
+// void penjumlahan(int a, int b) {
+//     printf("jumlah: %d\n", a + b);
+// }
+
+
 int main() {
-  char str1[] = "abcd", str2[] = "abCd", str3[] = "abcd";
-  int result;
+    printf("Hello, World!\n");
+    return 0;
+}
 
-  // comparing strings str1 and str2
-  result = strcmp(str1, str2);
-  printf("strcmp(str1, str2) = %d\n", result); // hasilnya 32 karena 'c' > 'C'
-
-  // comparing strings str1 and str3
-  result = strcmp(str1, str3);
-  printf("strcmp(str1, str3) = %d\n", result); // hasilnya 0 karena str1 sama dengan str3
-
-  return 0;
+int coba() {
+    main();
+    return 0;
 }
