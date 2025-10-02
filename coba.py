@@ -1,3 +1,3 @@
 s = 292
-c = len(s)
-print(c)
+c = str(s)
+print(len(c))

@@ -23,7 +23,6 @@ int nilaiTerrendah(int arrey[], int jumlahloop) {
     return terrendah;
 }
 
-
 float jumlahRata2(int arrey[], int jumlahloop) {
     int total = 0;
     for (int i = 0; i < jumlahloop; i++) {
