@@ -1,20 +1,23 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <string.h>
 
-long factor1(int n){
-    if(n==0)
-        return (1);
-    else
-        return(n * factor1(n-1));}
+// Definisi struct
+struct Mahasiswa {
+    int id;
+    char nama[20];
+    float nilai;
+};
 
-long factor2(int n) {
-    long i, fac = 1;
-    for(i=1; i<=n; i++){
-        fac *= i;}
-    return (fac);}
+int main() {
+    struct Mahasiswa mhs1;
 
-int main(){
-    int b = 4;
-    printf("%ld\n", factor1(b));
-    printf("%ld\n", factor2(b));
+    mhs1.id = 1;
+    strcpy(mhs1.nama, "Hans");
+    mhs1.nilai = 85.5;
+
+    printf("ID: %d\n", mhs1.id);
+    printf("Nama: %s\n", mhs1.nama);
+    printf("Nilai: %.2f\n", mhs1.nilai);
+
     return 0;
 }
