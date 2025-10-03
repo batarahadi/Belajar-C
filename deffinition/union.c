@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
+/*Penjelasan:
+
+Saat id diisi 10 → nilai benar.
+Setelah nama diisi "Hans" → data id akan tertimpa (karena pakai memori yang sama).
+Setelah nilai diisi 90.5 → data nama juga ikut rusak.
+maka dari itu struktur di atas jangan di samakan dengan STRUCT()
+*/
 
 union Data {
     int id;
@@ -22,11 +29,3 @@ int main() {
     
     return 0;
 }
-
-/*Penjelasan:
-
-Saat id diisi 10 → nilai benar.
-Setelah nama diisi "Hans" → data id akan tertimpa (karena pakai memori yang sama).
-Setelah nilai diisi 90.5 → data nama juga ikut rusak.
-maka dari itu struktur di atas jangan di samakan dengan STRUCT()
-*/
