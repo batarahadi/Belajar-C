@@ -1,3 +1,11 @@
-s = 292
-c = str(s)
-print(len(c))
+# Bubble Sort di Python
+arr = [64, 34, 25, 12, 22, 11, 90]
+
+n = len(arr)
+
+for i in range(n):
+    for j in range(0, n-i-1):
+        if arr[j] > arr[j+1]:
+            arr[j], arr[j+1] = arr[j+1], arr[j]  # swap
+
+print(f"Sorted array: {arr}")
