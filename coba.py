@@ -1,18 +1,16 @@
-# Bubble Sort di Python
-arr = [64, 34, 25, 12, 22, 11, 90]
+import time
 
-n = len(arr)
+# Catat waktu mulai
+start_time = time.perf_counter()
 
-for i in range(n):
-    for j in range(0, n-i-1):
-        if arr[j] > arr[j+1]:
-            arr[j], arr[j+1] = arr[j+1], arr[j]  # swap
+# === Kode program yang ingin diukur ===
+data = [i for i in range(100000000)]
+sorted_data = sorted(data)
+# ======================================
 
-print(f"Sorted array: {arr}")
+# Catat waktu selesai
+end_time = time.perf_counter()
 
-dataBaru = sorted(arr, reverse=True)
-print(f"Sorted array in descending order using sorted(): {dataBaru}")
-
-
-dataBaru.sort()
-print(f"Sorted array using built-in sort: {dataBaru}")
+# Hitung durasi
+duration = end_time - start_time
+print(f"Waktu eksekusi: {duration:.6f} detik")
