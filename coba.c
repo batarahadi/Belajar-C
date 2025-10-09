@@ -1,24 +1,29 @@
 #include <stdio.h>
 
-void sort(int arr[], int n) {
-    int i, j, temp;
-    for (i = 0; i < n-1; i++) {
-        for (j = 0; j < n-i-1; j++) { //<- n-i-1 bukan n-i karena array dimulai dari 0
-            if (arr[j] > arr[j+1]) {
-                temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
-            }
-        }
-    }
-}
-
 int main() {
-    int arr[] = {64, 34, 25, 12, 22};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    sort(arr, n);
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+    float totalPembelian, diskon = 0, totalPembeyaran;
+    int kupon;
+
+    // Input total pembelian
+    printf("Maukan total pembelian : Rp ");
+    scanf("%f", &totalPembelian);
+
+    // Menghitung kupon
+    kupon = totalPembelian / 100000;
+
+    // Menghitung diskon
+    if (totalPembelian >= 100000){
+        diskon = totalPembelian * 0.15;
     }
+
+    // Menghitung Total Pembayaran
+    totalPembeyaran = totalPembelian + diskon;
+
+    printf("\n===== RINCIAN PEMBELIAN =====\n");
+    printf("Total pembelian awal.   : Rp %.0f\n", totalPembelian);
+    printf("Jumlah kupon undian     : %d kupon\n", kupon);
+    printf("Nominal diskon.         : Rp %.2f\n", diskon);
+    printf("Total yang harus dibayar: %.0f\n", totalPembeyaran);
+
     return 0;
 }
