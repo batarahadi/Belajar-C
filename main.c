@@ -1,88 +1,100 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 
 struct dataPegawai {
     char NIP[20];
     char nama[50];
     char alamat[100];
-    char noHP[15];
+    char nomorHp[15];
     char jabatan[30];
-    char golongan[3];
-};
+}pegawai;
 
-long hitungGajiPokok(char golongan[]) {
-    if (strcmp(golongan, "D1") == 0) return 3000000;
-    else if (strcmp(golongan, "D2") == 0) return 2500000;
-    else if (strcmp(golongan, "D3") == 0) return 2000000;
-    else return 0;
+// Fungsi untuk menentukan gaji pokok berdasarkan golongan
+int gajiPokok(char golongan[]) {
+    if (strcmp(golongan, "D1") == 0) {
+        return 3000000;
+    } else if (strcmp(golongan, "D2") == 0) {
+        return 2500000;
+    } else if (strcmp(golongan, "D3") == 0) {
+        return 2000000;
+    } else {
+        return 0; // Jika golongan tidak valid
+    }
 }
 
-long hitungLembur(char golongan[]) {
-    if (strcmp(golongan, "D1") == 0) return 15000;
-    else if (strcmp(golongan, "D2") == 0) return 10000;
-    else if (strcmp(golongan, "D3") == 0) return 5000;
-    else return 0;
-}
-
-void formatRupiah(long angka, char hasil[]) {
-    char temp[30];
-    sprintf(temp, "%ld", angka);
-
-    int len = strlen(temp), titik = 0, i, j = 0;
-    char hasilTemp[40];
-
-    for (i = len - 1; i >= 0; i--) {
-        hasilTemp[j++] = temp[i];
-        if (++titik == 3 && i != 0) {
-            hasilTemp[j++] = '.';
-            titik = 0;
-        }
+// Fungsi untuk menentukan tarif lembur per jam berdasarkan golongan
+int tarifLembur(char golongan[]) {
+    if (strcmp(golongan, "D1") == 0) {
+        return 15000;
+    } else if (strcmp(golongan, "D2") == 0) {
+        return 10000;
+    } else if (strcmp(golongan, "D3") == 0) {
+        return 5000;
+    } else {
+        return 0; // Jika golongan tidak valid
     }
-    hasilTemp[j] = '\0';
-    int len2 = strlen(hasilTemp);
-    for (i = 0; i < len2; i++) {
-        hasil[i] = hasilTemp[len2 - i - 1];
-    }
-    hasil[len2] = '\0';
 }
 
 int main() {
-    struct dataPegawai pegawai;
-    char gajiFormatted[40];
-    char gajiTotalFormatted[40];
+    // struct dataPegawai pegawai;
+    // struct dataPegawai pegawai2;
+    char golongan[3];
     int jamLembur;
-    long gajiPokok, gajiLembur, totalGaji;
+    int gaji, tarif, totalGaji;
 
-    // Input data pegawai
-    printf("Masukkan NIP: ");
-    scanf("%s", pegawai.NIP);
-    getchar();
-    printf("Masukkan Nama: ");
+    // Input dari user
+    printf("Tampilan Inputan 1\n");
+    printf("NIP = ");
+    fgets(pegawai.NIP, sizeof(pegawai.NIP), stdin);
+    pegawai.NIP[strcspn(pegawai.NIP, "\n")] = 0;
+    
+    printf("Nama = ");
     fgets(pegawai.nama, sizeof(pegawai.nama), stdin);
     pegawai.nama[strcspn(pegawai.nama, "\n")] = 0;
-    printf("Masukkan Golongan (D1/D2/D3): ");
-    scanf("%s", pegawai.golongan);
-    printf("Masukkan Jumlah Lembur (jam): ");
+
+    printf("Alamat = ");
+    fgets(pegawai.alamat, sizeof(pegawai.alamat), stdin);
+    pegawai.alamat[strcspn(pegawai.alamat, "\n")] = 0;
+
+    printf("No HP = ");
+    fgets(pegawai.nomorHp, sizeof(pegawai.nomorHp), stdin);
+    pegawai.nomorHp[strcspn(pegawai.nomorHp, "\n")] = 0;
+
+    printf("Jabatan = ");
+    fgets(pegawai.jabatan, sizeof(pegawai.jabatan), stdin);
+    pegawai.jabatan[strcspn(pegawai.jabatan, "\n")] = 0;
+
+    printf("Golongan = "); 
+    fgets(golongan, sizeof(golongan), stdin);
+    golongan[strcspn(golongan, "\n")] = 0;
+
+    printf("Gaji = %d\n", gajiPokok(golongan));
+
+// Membersihkan buffer sebelum input berikutnya
+    while (getchar() != '\n'); //<-- Membersihkan karakter sisa di buffer setelah scanf()
+
+    // Input dari user
+    printf("\nTampilan Inputan 2\n");
+    printf("Masukkan NIP pegawai: ");
+    fgets(pegawai.NIP, sizeof(pegawai.NIP), stdin);
+    pegawai.NIP[strcspn(pegawai.NIP, "\n")] = 0;
+
+    printf("Masukkan golongan (D1/D2/D3): ");
+    fgets(golongan, sizeof(golongan), stdin);
+    golongan[strcspn(golongan, "\n")] = 0;
+
+    printf("Masukkan jumlah jam lembur: ");
     scanf("%d", &jamLembur);
 
-    // Hitung gaji
-    gajiPokok = hitungGajiPokok(pegawai.golongan);
-    gajiLembur = hitungLembur(pegawai.golongan) * jamLembur;
-    totalGaji = gajiPokok + gajiLembur;
+    // Menentukan gaji pokok dan tarif lembur
+    gaji = gajiPokok(golongan);
+    tarif = tarifLembur(golongan);
 
-    // Format rupiah
-    formatRupiah(gajiPokok, gajiFormatted);
-    formatRupiah(totalGaji, gajiTotalFormatted);
+    // Menghitung total gaji bulan ini
+    totalGaji = gaji + (jamLembur * tarif);
 
-    // Tampilkan
-    printf("\n=== Data Pegawai ===\n");
-    printf("NIP      : %s\n", pegawai.NIP);
-    printf("Nama     : %s\n", pegawai.nama);
-    printf("Golongan : %s\n", pegawai.golongan);
-    printf("Gaji Pokok: Rp %s\n", gajiFormatted);
-    printf("Jumlah Lembur: %d jam\n", jamLembur);
-    printf("Total Gaji Bulan Ini: Rp %s\n", gajiTotalFormatted);
+    // Menampilkan hasil
+    printf("Total Gaji   : Rp %d\n", totalGaji);
 
     return 0;
 }

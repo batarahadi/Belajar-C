@@ -1,29 +1,32 @@
 #include <stdio.h>
+#include <string.h>
+
+struct tmhs {
+    char nim[11];
+    char name[26];
+    float gpa;
+} akad, ali, tono;  // <-- ini variabel, bukan fungsi
 
 int main() {
-    float totalPembelian, diskon = 0, totalPembeyaran;
-    int kupon;
+    // Mengisi data mahasiswa Ali
+    sprintf(ali.nim, "1234567890");
+    sprintf(ali.name, "Ali");
+    ali.gpa = 3.85;
 
-    // Input total pembelian
-    printf("Maukan total pembelian : Rp ");
-    scanf("%f", &totalPembelian);
+    // Menampilkan data
+    printf("NIM: %s\n", ali.nim);
+    printf("Nama: %s\n", ali.name);
+    printf("IPK: %.2f\n", ali.gpa);
 
-    // Menghitung kupon
-    kupon = totalPembelian / 100000;
+    // Mengisi data mahasiswa Tono
+    sprintf(tono.nim, "9876543210");
+    sprintf(tono.name, "Tono");
+    tono.gpa = 3.75;
 
-    // Menghitung diskon
-    if (totalPembelian >= 100000){
-        diskon = totalPembelian * 0.15;
-    }
-
-    // Menghitung Total Pembayaran
-    totalPembeyaran = totalPembelian + diskon;
-
-    printf("\n===== RINCIAN PEMBELIAN =====\n");
-    printf("Total pembelian awal.   : Rp %.0f\n", totalPembelian);
-    printf("Jumlah kupon undian     : %d kupon\n", kupon);
-    printf("Nominal diskon.         : Rp %.2f\n", diskon);
-    printf("Total yang harus dibayar: %.0f\n", totalPembeyaran);
+    // Menampilkan data
+    printf("NIM: %s\n", tono.nim);
+    printf("Nama: %s\n", tono.name);
+    printf("IPK: %.2f\n", tono.gpa);
 
     return 0;
 }

@@ -18,5 +18,15 @@ int main() {
     printf("Nama: %s\n", ali.name);
     printf("IPK: %.2f\n", ali.gpa);
 
+    // Mengisi data mahasiswa Tono
+    sprintf(tono.nim, "9876543210");
+    sprintf(tono.name, "Tono");
+    tono.gpa = 3.75;
+
+    // Menampilkan data
+    printf("NIM: %s\n", tono.nim);
+    printf("Nama: %s\n", tono.name);
+    printf("IPK: %.2f\n", tono.gpa);
+
     return 0;
 }
