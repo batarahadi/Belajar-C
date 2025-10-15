@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
     FILE *dataMenulis = fopen("file.txt", "w");
