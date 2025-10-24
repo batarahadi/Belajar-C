@@ -1,18 +1,26 @@
 #include <stdio.h>
-#include <errno.h>
-#include <string.h>
 
-int main(void) {
-    FILE *fptr;
-    char filename[] = "haiku.txt";
+int main() {
+    FILE *fp;
+    unsigned char buffer[1024];  // buffer 1 KB
+    size_t bytesRead;
+    size_t total = 0;
 
-    if ((fptr = fopen(filename, "r")) == NULL) {
-        // perror menuliskan pesan error berdasarkan errno
-        perror("Gagal membuka file");
-        return 1; // FAIL
+    // buka file gambar dalam mode biner
+    fp = fopen("zyro-image.jpg", "rb");
+    if (fp == NULL) {
+        printf("Gagal membuka file!\n");
+        return 1;
     }
 
-    printf("Berhasil membuka file.\n");
-    fclose(fptr);
+    // baca per 1 KB sampai akhir file
+    while ((bytesRead = fread(buffer, 1, sizeof(buffer), fp)) > 0) {
+        total += bytesRead;
+        // tampilkan sebagian data (misalnya byte pertama dari tiap blok)
+        printf("Byte pertama di blok ini: %02X\n", buffer[0]);
+    }
+
+    fclose(fp);
+    printf("Total byte yang dibaca: %zu\n", total);
     return 0;
 }
