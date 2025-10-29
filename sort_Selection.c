@@ -12,11 +12,11 @@ void memilihSort(int bil[], int banyak){
     for (int i = 0; i < banyak - 1; i++){
         posisi = i;  
         for (int j = i + 1; j < banyak; j++){
-            if (bil[j] < bil[posisi]){
+            if (bil[posisi] > bil[j]){
                 posisi = j;
             }
         }
-        if (posisi != i){
+        if (i != posisi){
             int tmp = bil[i];
             bil[i] = bil[posisi];
             bil[posisi] = tmp;
