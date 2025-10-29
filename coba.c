@@ -1,10 +1,8 @@
 #include<stdio.h>
 
 int main() {
-    int n =10;
+    int n =10 & 3;
 
-    for (int i =0; i < n -1 ; i++){
-        printf("%d ", i);
-    }
+    printf("%d\n", n);
     return 0;
 }
