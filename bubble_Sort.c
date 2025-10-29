@@ -1,15 +1,18 @@
 #include <stdio.h>
 
+void swap(int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 // Definisi fungsi bubble sort
 void bubbleSort(int arr[], int n) {
-    int i, j, temp;
-
+    int i, j;
     for (i = 0; i < n - 1; i++) {
         for (j = 0; j < n - 1; j++) {
             if (arr[j] > arr[j + 1]) {
-                temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+                swap(&arr[j], &arr[j + 1]); // Tukar elemen
             }
         }
     }
