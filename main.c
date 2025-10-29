@@ -1,21 +1,49 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int linear_search(int arr[], int n, int key) {
-    for (int i = 0; i < n; i++) {
-        if (arr[i] == key)
-            return i;
+// void tukar(int *n1, int *n2){
+//     int temp = *n1;
+//     *n1 = *n2;
+//     *n2 = temp;
+// }
+
+void memilihSort(int bil[], int banyak){
+    int posisi;
+    for (int i = 0; i < banyak - 1; i++){
+        posisi = i;  
+        for (int j = i + 1; j < banyak; j++){
+            if (bil[j] < bil[posisi]){
+                posisi = j;
+            }
+        }
+        if (posisi != i){
+            int tmp = bil[i];
+            bil[i] = bil[posisi];
+            bil[posisi] = tmp;
+        }
     }
-    return -1;  // tidak ditemukan
+
+    printf("Hasil setelah sorting:\n");
+    for (int i = 0; i < banyak; i++){
+        printf("%d ", bil[i]);
+    }
+    printf("\n");
 }
 
 int main() {
-    int arr[] = {10, 23, 5, 46, 17};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int key = 41;
-    int idx = linear_search(arr, n, key);
-    if (idx != -1)
-        printf("Elemen %d ditemukan di indeks %d\n", key, idx);
-    else
-        printf("Elemen %d tidak ditemukan\n", key);
+    int banyak, i, bil[10];
+
+    do {
+        printf("Masukkan banyak bilangan (max 10): ");
+        scanf("%d", &banyak);
+    } while (banyak < 1 || banyak > 10);
+
+    for (i = 0; i < banyak; i++){
+        printf("Masukkan bilangan ke-%d: ", i + 1);
+        scanf("%d", &bil[i]);
+    }
+
+    memilihSort(bil, banyak);
+
     return 0;
 }

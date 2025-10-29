@@ -1,17 +1,10 @@
-#include <stdio.h>
-
-int sum (int k);
+#include<stdio.h>
 
 int main() {
-    int result = sum(1);
-    printf("%d\n", result);
-    
-    return 0;
-}
-int sum (int k) {
-    if (k > 0) {
-        return k + sum(k - 1);
-    } else {
-        return 0;
+    int n =10;
+
+    for (int i =0; i < n -1 ; i++){
+        printf("%d ", i);
     }
+    return 0;
 }
