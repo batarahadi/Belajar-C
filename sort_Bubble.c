@@ -2,19 +2,15 @@
 
 #define MAX_SIZE 10
 
-void swap(int *a, int *b){
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
 // Definisi fungsi bubble sort
 void bubbleSort(int arr[], int n) {
     int i, j;
     for (i = 0; i < n - 1; i++) {
         for (j = 0; j < n - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
-                swap(&arr[j], &arr[j + 1]); // Tukar elemen
+                int temp = arr[j];  // Tukar arr[j] dan arr[j+1]
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
             }
         }
     }
