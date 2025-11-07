@@ -1,24 +1,10 @@
-// C Program to demonstrate fscanf
 #include <stdio.h>
+int main() {
+    void *p;
+    int x = 10;
 
-// Driver Code
-int main()
-{
-    FILE* ptr = fopen("abc.txt", "r");
-    if (ptr == NULL) {
-        printf("no such file.");
-        return 0;
-    }
-
-    /* Assuming that abc.txt has content in below
-       format
-       NAME    AGE   CITY
-       abc     12    hyderabad
-       bef     25    delhi
-       cce     65    bangalore */
-    char buf[100];
-    while (fscanf(ptr, "%*s %*s %s ", buf) == 1)
-        printf("%s", buf);
-
+    p = &x;          // p menyimpan alamat x (tanpa tipe)
+    int *ip = (int*)p; // casting pointer
+    printf("%d\n", *ip); // akses nilai lewat pointer
     return 0;
 }
