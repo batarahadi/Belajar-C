@@ -2,38 +2,48 @@
 #include <stdlib.h>
 
 int main() {
-    int n = 1;
-    int *nilai = malloc(n * sizeof(int)); 
-    // awalnya hanya 1 angka
+    int *arr;
+    int n;
 
-    nilai[0] = 10; // isi nilai awal
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
 
-    printf("Isi array awal: ");
-    for (int i = 0; i < n; i++) {
-        printf("%d ", nilai[i]);
+    // Alokasi memori menggunakan calloc
+    arr = (int*)calloc(n, sizeof(int));
+    if (arr == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1;
     }
 
-    // Sekarang kita ingin menambah ukuran array menjadi 3
-    n = 3;
-    nilai = realloc(nilai, n * sizeof(int)); 
-    /*
-    realloc memodifikasi ukuran memori
-    data lama tetap ada, hanya menambah ruangnya
-    */
-
-    // isi nilai baru (elemen ke-1 dan ke-2)
-    nilai[1] = 20;
-    nilai[2] = 30;
-
-    printf("\nIsi array setelah realloc: ");
+    // Mengisi array
     for (int i = 0; i < n; i++) {
-        printf("%d ", nilai[i]);
+        arr[i] = i + 1;
     }
 
-    // Menampilkan alamat memori untuk menunjukkan bahwa pointer tetap sama atau bisa berubah
-    printf("\nAlamat memori nilai: %p\n", nilai);
+    // Menampilkan isi array
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
 
-    free(nilai); // wajib free setelah selesai
+    // Mengubah ukuran array
+    printf("Enter the new number of elements: ");
+    scanf("%d", &n);
 
+    arr = (int*)realloc(arr, n * sizeof(int));
+    if (arr == NULL) {
+        printf("Memory reallocation failed!\n");
+        return 1;
+    }
+
+    // Menampilkan isi array setelah realokasi
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    // Membebaskan memori
+    free(arr);
+    
     return 0;
 }
