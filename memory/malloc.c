@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> // harus ada stdlib.h untuk malloc dan free
 
 int main() {
     int n = 1;
