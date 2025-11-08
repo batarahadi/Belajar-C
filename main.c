@@ -2,13 +2,13 @@
 #include <stdlib.h>
 
 int main() {
-    
-    int *p = malloc(sizeof(int)); // Alokasi untuk 1 integer
-    // int *p = (int*) malloc(sizeof(int)); // Alokasi untuk 1 integer
+    int x = 8;
+    int *p = malloc(x * sizeof(int)); // Alokasi untuk 1 integer
 
-    *p = 25; // Isi nilai
-
-    printf("Nilai p: %d\n", *p);
+    printf("\nIsi array: ");
+    for (int i = 0; i < x; i++) {
+        printf("%d ", p[i]);
+    }
 
     free(p); // Bebaskan memori
 
