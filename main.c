@@ -2,11 +2,10 @@
 #include <stdlib.h>
 
 int main() {
-    int x = 8;
-    int *p = malloc(x * sizeof(int)); // Alokasi untuk 1 integer
+    int *p = malloc(sizeof(int)); // Alokasi untuk 1 integer
 
     printf("\nIsi array: ");
-    for (int i = 0; i < x; i++) {
+    for (int i = 0; i < 5; i++) {
         printf("%d ", p[i]);
     }
 

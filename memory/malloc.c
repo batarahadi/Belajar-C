@@ -4,14 +4,13 @@
 int main() {
     int n = 1;
 
-
-    int *nilai = calloc(n, sizeof(int)); /* 
-    n adalah jumlah array. jika tidak diisi array maka akan error, 
-    maka dari itu lebih baik diisi meskipun nilainya 0
-    berbeda dengan malloc yang tidak perlu array 
+    int *nilai = malloc(sizeof(int)); /*
+    bisa juga diisi malloc(n * sizeof(int));
+    nilai n adalah array 
+    malloc tidak perlu array seperti calloc
     */
 
-    printf("nilai : %d\n", *nilai); // harus ada *
+    printf("Alamat memori nilai: %d\n", *nilai); // harus ada *
     printf("Alamat memori nilai: %p\n", nilai); // menampilkan alamat memori, tidak perlu tanda *
     printf("Isi array: ");
     for (int i = 0; i < n; i++) {
