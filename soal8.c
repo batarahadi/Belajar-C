@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 struct dataMahasiswa{
     char NIM[6];
@@ -31,10 +32,9 @@ int main() {
             found = 1;
             break;
         }
-        else {
-            printf("Data mahasiswa dengan NIM %s tidak ditemukan.\n", cariNIM);
-        }
     }
-    
+    if (!found) {
+        printf("\nData mahasiswa dengan NIM %s tidak ditemukan.\n", cariNIM);
+    }
     return 0;
 }
