@@ -1,18 +1,20 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-static int a = 5;
-static void apalah() {
-    static b = 10;
-    printf("Nilai a di dalam apalah(): %d\n", b);
+void masukanPesan() {
+    FILE *file = fopen("pesan.txt", "a");
+    if (file == NULL) {
+        printf("Gagal membuka file.\n");
+        return;
+    }
+    char pesan[256];
+    printf("Masukkan pesan yang akan disimpan max 250 karakter: ");
+    fgets(pesan, sizeof(pesan), stdin);
+    fprintf(file, "%s", pesan);
+
+    fclose(file);
 }
 
-
 int main() {
-    printf("Nilai a di dalam main(): %d\n", a);
-    apalah();
-    a += 10;
-    printf("Nilai a setelah diubah di main(): %d\n", a);
-
+    masukanPesan();
     return 0;
 }
